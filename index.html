@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mijn website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #4698aa;
+      padding: 25px 0;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      background-color: white;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      list-style-type: disc;
+      text-align: left;
+      display: inline-block;
+      padding-left: 20px;
+    }
+
+    iframe {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 500px;
+      height: 280px;
+      border: none;
+    }
+
+    .images-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .images-row img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #4698aa;
+      color: white;
+      padding: 15px;
+    }
+
+   .vlag-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+    .vlag {
+      width: 300px;
+      height: 150px;
+      border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stripe {
+      flex: 2;
+      width: 100%;
+      position: relative;
+    }
+
+    .green {
+      background-color: #079f14;
+    }
+
+    .white {
+      background-color: white;
+    }
+
+    .black {
+      background-color: black;
+    }
+
+       .star {
+      color: red;
+      font-size: 30px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .star.left {
+      left: 25%;
+    }
+
+    .star.center {
+      left: 47%;
+    }
+
+    .star.right {
+      right: 25%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welkom op mijn website!</h1>
+  </header>
+
+  <nav>
+    <a href="#over-mij">Over mij</a>
+    <a href="#afkomst">Afkomst</a>
+    <a href="#hobbys">Hobby's</a>
+    <a href="#video">Muziek</a>
+    <a href="#fotos">Foto's</a>
+    <a href="#werk">Werk</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="over-mij">
+    <h2>Over mij</h2>
+    <p>Hallo! Mijn naam is Nour, ik ben 16 jaar oud en ik studeer de ICT-flexopleiding aan het ROC. Ik woon in Barneveld.</p>
+  </section>
+  <section id="afkomst">
+  <h2>Mijn afkomst</h2>
+  <div class="vlag-container">
+    <div class="vlag">
+      <div class="stripe green"></div>
+      <div class="stripe white">
+        <div class="star left">&#9733;</div>
+        <div class="star center">&#9733;</div>
+        <div class="star right">&#9733;</div>
+      </div>
+      <div class="stripe black"></div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="hobbys">
+    <h2>Hobby's</h2>
+    <ul>
+      <li>Tekenen</li>
+      <li>Wandelen</li>
+      <li>Koken</li>
+      <li>Muziek luisteren</li>
+    </ul>
+  </section>
+
+  <section id="video">
+  <h2>Muziekvideo</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lki4n8_NOEg?si=iYqonHfxYuXJ0COJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section>
+
+ <section id="fotos">
+  <h2>Mijn foto's</h2>
+  <img id="wisselFoto" src="1.jpg" alt="Klik om te wisselen" onclick="veranderFoto()" style="width:300px; cursor:pointer; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
+  <p>Klik op de foto om te wisselen</p>
+</section>
+
+  <section id="werk">
+    <h2>Mijn werk</h2>
+    <p>ICT-medewerker stagiair.</p>
+  </section>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+       <a href="mailto:Hh1387744@gmail.com" target="_blank" style="color:white; text-decoration:none;">
+       &nbsp;Mijn Email
+    </a>
+     <p>
+      <a href="https://www.linkedin.com/in/nour-shekh-574067356" target="_blank" style="color:white; text-decoration:none;">
+      &nbsp;Mijn LinkedIn-profiel
+    </a>
+  </p>
+
+<script>
+  let huidig = 1;
+  function veranderFoto() {
+    huidig++;
+    if (huidig > 9) huidig = 1; 
+    document.getElementById("wisselFoto").src = huidig + ".jpg";
+  }
+</script>
+  </footer>
+</body>
+</html>
